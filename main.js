@@ -21,6 +21,9 @@ var checkKey = function(e){
   var word = document.getElementById('focusedInput').value.toUpperCase();
   document.getElementById('check').classList.remove("btn-success");
   document.getElementById('check').classList.remove("btn-primary");
+  if (word.includes('<') || word.includes('>')){
+    document.getElementById('focusedInput').value = word.replace(/[\>\<]/gi,"");
+  }
   if (e.keyCode == 13) {
     checkWord();
   }
