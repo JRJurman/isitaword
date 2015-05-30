@@ -1,0 +1,16 @@
+/* styles.css */
+/* created by Jesse Jurman, Ethan Jurman */
+
+body {
+  max-width: 700px;
+  margin: 10px auto;
+}
+
+a.check {
+  width: 100%;
+  font-size: 2em;
+}
+
+input {
+  text-transform: uppercase;
+}
