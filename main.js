@@ -10,7 +10,10 @@ dictionaryLoader.send();
 var dictionaryString;
 dictionaryLoader.onreadystatechange = function() {
   if (this.readyState== 4 && this.status == 200){
-    dictionaryString = this.responseText.split("\n");
+    dictionaryString = this.responseText.split("\n").map(function(e){
+      return e.trim();
+    });
+
   }
 }
 
@@ -30,7 +33,7 @@ var checkKey = function(e){
 }
 
 var checkWord = function(){
-  var word = document.getElementById('focusedInput').value.toUpperCase();
+  var word = document.getElementById('focusedInput').value.trim().toUpperCase();
 
   if (dictionaryString.indexOf(word) > -1) {
     document.getElementById('check').classList.add("btn-success");
